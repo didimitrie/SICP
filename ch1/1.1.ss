@@ -1,3 +1,6 @@
+
+;;;; In chapter code, following as we go along
+
 (+ 21 21)
 (+ 21 21 21 21 )
 (+ 321 21)
@@ -34,7 +37,7 @@
         ((< x 0) (- x))))
 
 (define (abs x)
-  (cond ((< x 0 )(- x))
+  (cond ((< x 0 ) (- x))
         (else x)))
 
 (define (abs-better x)

@@ -33,10 +33,10 @@
   (* num num))
 
 (define (largest-squares x y z)
-  (cond 
-    ((and (>= x z) (>= y z) (+ (square x) (square y)))
-     (and (>= y x) (>= z x) (+ (square z) (square y)))
-     (and (>= z x) (>= x y) (+ (square z) (square x))))
+  (cond ((and (>= x z) (>= y z)) (+ (square x) (square y)))
+        ((and (>= y x) (>= z x)) (+ (square z) (square y)))
+        ((and (>= z x) (>= x y)) (+ (square z) (square x)))
+        (else 42)))
   
 (largest-squares 4 4 2)
   
