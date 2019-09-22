@@ -44,4 +44,27 @@
   (if (< x 0)
       (- x)
       x))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+
+;;;; Scoping the simplistic sqrt algorithm
+
+(define (sqrt x)
+  ;define guesser
+  (define (good-enough? guess)
+    (< (abs (- (square guess) x)) 0.001))
   
+  ; define improver procedure
+  (define (improve guess)
+    (average guess (/ x guess)))
+  
+  ;define iteration function
+  (define (sqrt-iter guess)
+    (if (good-enough? guess)
+        guess
+        (sqrt-iter (improve guess))))
+  
+  ; kick things off with an original guess
+  (sqrt-iter 1.0))
